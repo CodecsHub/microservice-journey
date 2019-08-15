@@ -12,4 +12,8 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\source\Microservice00000.Contacts.Domain\Microservice00000.Contacts.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

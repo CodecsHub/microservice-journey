@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microservice00000.Contacts.Domain.Contracts;
+using Microservice00000.Contacts.Domain.Interfaces;
+using Microservice00000.Contacts.Domain.Services;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
@@ -15,18 +18,22 @@ namespace Microservice00000.Contacts.Test.UnitTest
         {
             //
             // Arrange
-            string expectName = "John Doe";
-            string expectedPhoneNumber = "+76 1 400 180 66";
-            //ICreateContactInformation createContactInformation = new CreateContactInformation();
+            Int64 exepctId = 1;
+            string expectFirstName = "Francisco";
+            string expectLastName = "Abayon";
+            string expectedContactNumber = "09224878349";
+
+            IContactInformationUseCase createContactInformation = new ContactInformationUseCase();
 
             // Act
-            //CustomerResult actualCustomerResult = registerUC.Register(expectName, expectedPhoneNumber);
+            ContactResult actualContactResult = createContactInformation.CreateContact(exepctId, expectFirstName, expectLastName, expectedContactNumber);
 
             // Assert
-            //Assert.NotNull(actualCustomerResult);
-            //Assert.NotEqual(Guid.Empty, actualCustomerResult.Id);
-            //Assert.Equal(expectName, actualCustomerResult.Name);
-            //Assert.Equal(expectedPhoneNumber, actualCustomerResult.PhoneNumber);
+            Assert.NotNull(actualContactResult);
+            Assert.NotEqual(0, actualContactResult.Id);
+            Assert.Equal(expectFirstName, actualContactResult.FirstName);
+            Assert.Equal(expectLastName, actualContactResult.LastName);
+            Assert.Equal(expectedContactNumber, actualContactResult.ContactNumber);
         }
 
     }
