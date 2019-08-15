@@ -11,9 +11,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{03E9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5C993654-757C-4E9E-8710-6B904FCC855A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservice00000.Contacts.Domain", "source\Microservice00000.Contacts.Domain\Microservice00000.Contacts.Domain.csproj", "{486E4555-77E0-4157-9CDA-93D7CE4D16C2}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{486E4555-77E0-4157-9CDA-93D7CE4D16C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{486E4555-77E0-4157-9CDA-93D7CE4D16C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{486E4555-77E0-4157-9CDA-93D7CE4D16C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{486E4555-77E0-4157-9CDA-93D7CE4D16C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{486E4555-77E0-4157-9CDA-93D7CE4D16C2} = {32BEA8E6-5575-4320-BED6-9179A0FC294D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DDAC2A88-42FA-4A31-8609-FF0B6BA11E93}
