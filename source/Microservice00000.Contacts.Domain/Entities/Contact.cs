@@ -5,41 +5,49 @@ using System.Text;
 namespace Microservice00000.Contacts.Domain.Entities
 {
     /// <summary>
-    /// The sealed Contact class.
-    /// The entity for contact information
+    /// The sealed <c>Contact</c> class.
+    /// The entity for contact information.
+    /// <list type="bullet">
+    /// <item>
+    /// <term>Constructor</term>
+    /// <description>Predefined instantation of contact.</description>
+    /// </item>
+    /// </list>
     /// </summary>
     /// <remarks>
-    /// <para>This class is consist of properties are private set but get in open via constructor</para>
-    /// <para>These operations can be performed on contact information combination of string and number</para>
+    /// <para>This class is consist of properties are private set but get in open via constructor.</para>
+    /// <para>These operations can be performed on contact information combination of string and number.</para>
     /// </remarks>
     public sealed class Contact
     {
         /// <summary>
         /// The unique Id for the contact information entity.
         /// </summary>
-        /// <value>Gets the value of Id and private set from contructor</value>
+        /// <value>Gets the value of Id and private set from constructor.</value>
         public Int64 Id { get; private set;}
 
         /// <summary>
         /// The first name of the contact information.
         /// </summary>
-        /// <value>Gets the value of FirstName and private set from contructor</value>
+        /// <value>Gets the value of FirstName and private set from constructor.</value>
         public string FirstName { get; private set; }
 
         /// <summary>
         /// The last Name of the contact information.
         /// </summary>
-        /// <value>Gets the value of LastName and private set from contructor</value>
+        /// <value>Gets the value of LastName and private set from constructor.</value>
         public string LastName { get; private set; }
 
         /// <summary>
         /// The contact number of the contact information.
         /// </summary>
-        /// <value>Gets the value of ContactNumber and private set from contructor</value>
+        /// <value>Gets the value of ContactNumber and private set from constructor.<value>
         public string ContactNumber { get; private set; }
 
         /// <summary>
-        /// Entry point of the contact information system
+        /// Entry point of the contact information system with having
+        /// the unique  <paramref name="id"/> then followed by
+        /// <paramref name="firstname"/>, <paramref name="lastname"/> and number <paramref name="contactNumber"/>.
         /// </summary>
         /// <return>
         /// get the return data set in the constructor
@@ -50,12 +58,14 @@ namespace Microservice00000.Contacts.Domain.Entities
         /// return contactInformation;
         /// </code>
         /// </example>
-        /// <param name="id">831</param>
-        /// <param name="firstname">Francisco</param>
-        /// <param name="lastname">Abayon</param>
-        /// <param name="contactNumber">092248678349</param>
+        /// <param name="id">A unique long Id.</param>
+        /// <param name="firstname">The First Name string.</param>
+        /// <param name="lastname">The Last Name string.</param>
+        /// <param name="contactNumber">The contact number with string data type.</param>
         /// <exception cref="System.ArgumentException">Thrown when either firstname
-        /// or lastname is not a valid name</exception>
+        /// or lastname is not a valid name.</exception>
+        /// See <see cref="ValidateName(string)"/> to add doubles
+        /// <seealso cref="CreateContact(Contact)"/>
         public Contact(Int64 id, string firstname, string lastname, string contactNumber)
         {
 
