@@ -39,14 +39,16 @@ namespace Microservice00000.Contacts.Test.UnitTest
             Assert.Equal(expectedContactNumber, actualContactResult.ContactNumber);
         }
 
+        // ToDo : unit test the character case sensitve in contact entity
+
         //Arrange
         [Theory]
         [InlineData(1, "Francisco", "Abayon", "0921151615")]
         [InlineData(2, "Alice", "Delos Santos", "09238910021")]
         [InlineData(3, "Nimrod", "Abayon IV", "09224873491")]
         [InlineData(3, "Dianalyn", "Muaña", "09224873491")]
-        [InlineData(4, "Danica Marie", "Muaña", "09224873491")]
-        [InlineData(4, "Danica Marie", "Noyaba", "09224873491")]
+        [InlineData(4, "Danica MARIE", "Muaña", "09224873491")]
+        [InlineData(4, "dAnica marie", "Noyaba", "09224873491")]
         [InlineData(Int64.MinValue, "Nimrod", "Abayon", "09224873491")]
         [InlineData(Int64.MaxValue, "Nimrod", "Abayon", "09224873491")]
 

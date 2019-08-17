@@ -20,29 +20,75 @@ namespace Microservice00000.Contacts.Domain.Entities
     /// </remarks>
     public sealed class Contact
     {
+
+        private Int64 _id;
+        private string _firstName;
+        private string _lastName;
+        private string _contactNumber;
+
         /// <summary>
         /// The unique Id for the contact information entity.
         /// </summary>
         /// <value>Gets the value of Id and private set from constructor.</value>
-        public Int64 Id { get; private set;}
+        public Int64 Id
+        {
+            get
+            {
+                return _id;
+            }
+            private set
+            {
+                _id = value;
+            }
+        }
 
         /// <summary>
         /// The first name of the contact information.
         /// </summary>
         /// <value>Gets the value of FirstName and private set from constructor.</value>
-        public string FirstName { get; private set; }
+        public string FirstName
+        {
+            get
+            {
+                return _firstName;
+            }
+            private set
+            {
+                _firstName = value.ToLower();
+            }
+        }
 
         /// <summary>
         /// The last Name of the contact information.
         /// </summary>
         /// <value>Gets the value of LastName and private set from constructor.</value>
-        public string LastName { get; private set; }
+        public string LastName
+        {
+            get
+            {
+                return _lastName;
+            }
+            private set
+            {
+                _lastName = value.ToLower();
+            }
+        }
 
         /// <summary>
         /// The contact number of the contact information.
         /// </summary>
         /// <value>Gets the value of ContactNumber and private set from constructor.<value>
-        public string ContactNumber { get; private set; }
+        public string ContactNumber
+        {
+            get
+            {
+                return _contactNumber;
+            }
+            private set
+            {
+                _contactNumber = value.ToLower();
+            }
+        }
 
         /// <summary>
         /// Entry point of the contact information system with having
