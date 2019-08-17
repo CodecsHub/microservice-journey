@@ -54,22 +54,60 @@ namespace Microservice00000.Contacts.Domain.Entities
         /// <param name="firstname">Francisco</param>
         /// <param name="lastname">Abayon</param>
         /// <param name="contactNumber">092248678349</param>
+        /// <exception cref="System.ArgumentException">Thrown when either firstname
+        /// or lastname is not a valid name</exception>
         public Contact(Int64 id, string firstname, string lastname, string contactNumber)
         {
 
-            try
+
+            if (ValidateName(firstname) == true)
             {
-                this.Id = id;
-                this.FirstName = firstname;
+                this.FirstName = firstname ?? throw new NullReferenceException(nameof(firstname));
+            }
+            else
+            {
+                throw new ArgumentException("The value was not valid", "firstName");
+            }
+
+            if (ValidateName(lastname) == true)
+            {
                 this.LastName = lastname;
-                this.ContactNumber = contactNumber;
             }
-            catch (Exception e)
+            else
             {
-
-                throw e;
+                throw new ArgumentException("The value was not valid", "lastName");
             }
 
+
+            this.Id = id;
+            this.ContactNumber = contactNumber ?? throw new ArgumentNullException(nameof(contactNumber));
+
+
+
+        }
+
+
+        private bool ValidateName(string name)
+        {
+            bool output = true;
+            char[] invalidCharacters = "`~!@#$%^&*()_+=0123456789<>,.?/\\|{}[]'\"".ToCharArray();
+
+            if (name == null || name == String.Empty)
+            {
+                output = false;
+            }
+
+            if (name.Length < 2)
+            {
+                output = false;
+            }
+
+            if (name.IndexOfAny(invalidCharacters) >= 0)
+            {
+                output = false;
+            }
+
+            return output;
         }
     }
 }
