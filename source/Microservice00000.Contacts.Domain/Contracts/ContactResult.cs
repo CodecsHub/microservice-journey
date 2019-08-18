@@ -10,7 +10,7 @@ namespace Microservice00000.Contacts.Domain.Contracts
         /// <summary>
         /// Get only the return result of Contact.id
         /// </summary>
-        public Int64 Id { get; }
+        public Guid Id { get; }
 
         /// <summary>
         /// Get only the return result of Contact.FirstName

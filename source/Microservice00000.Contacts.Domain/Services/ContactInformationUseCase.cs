@@ -9,9 +9,9 @@ namespace Microservice00000.Contacts.Domain.Services
 {
     public class ContactInformationUseCase : IContactInformationUseCase
     {
-        public ContactResult CreateContact(Int64 exepctId, string expectFirstName, string expectLastName, string expectedContactNumber)
+        public ContactResult CreateContact(string expectFirstName, string expectLastName, string expectedContactNumber)
         {
-            Contact contactInformation = new Contact(exepctId, expectFirstName, expectLastName, expectedContactNumber);
+            Contact contactInformation = new Contact( expectFirstName, expectLastName, expectedContactNumber);
             return new ContactResult(contactInformation);
         }
     }

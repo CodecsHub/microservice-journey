@@ -18,29 +18,15 @@ namespace Microservice00000.Contacts.Domain.Entities
     /// <para>This class is consist of properties are private set but get in open via constructor.</para>
     /// <para>These operations can be performed on contact information combination of string and number.</para>
     /// </remarks>
-    public sealed class Contact
+    public sealed class Contact : BaseEntity
     {
 
-        private Int64 _id;
+       // private Int64 _id;
         private string _firstName;
         private string _lastName;
         private string _contactNumber;
 
-        /// <summary>
-        /// The unique Id for the contact information entity.
-        /// </summary>
-        /// <value>Gets the value of Id and private set from constructor.</value>
-        public Int64 Id
-        {
-            get
-            {
-                return _id;
-            }
-            private set
-            {
-                _id = value;
-            }
-        }
+
 
         /// <summary>
         /// The first name of the contact information.
@@ -112,7 +98,7 @@ namespace Microservice00000.Contacts.Domain.Entities
         /// or lastname is not a valid name.</exception>
         /// See <see cref="ValidateName(string)"/> to add doubles
         /// <seealso cref="CreateContact(Contact)"/>
-        public Contact(Int64 id, string firstname, string lastname, string contactNumber)
+        public Contact(string firstname, string lastname, string contactNumber)
         {
 
 
@@ -135,7 +121,7 @@ namespace Microservice00000.Contacts.Domain.Entities
             }
 
 
-            this.Id = id;
+
             this.ContactNumber = contactNumber ?? throw new ArgumentNullException(nameof(contactNumber));
 
 

@@ -7,7 +7,7 @@ namespace Microservice00000.Contacts.Domain.Interfaces
 {
     public interface IContactInformationUseCase
     {
-        ContactResult CreateContact(Int64 exepctId, string expectFirstName, string expectLastName, string expectedContactNumber);
+        ContactResult CreateContact( string expectFirstName, string expectLastName, string expectedContactNumber);
 
     }
 }
